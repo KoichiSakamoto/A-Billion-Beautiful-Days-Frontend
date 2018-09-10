@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
-import ProductContainer from './ProductContainer'
+import ProductContainer from './ProductContainer';
+import { fetchProducts } from '../actions/products';
+import { connect } from 'react-redux';
 
-export default class ProductIndexPage extends Component {
-
-  state = {
-    products: []
-  }
+class ProductIndexPage extends Component {
 
   componentDidMount() {
-    fetch('http://localhost:4000/api/v1/products')
-    .then(res => res.json())
-    .then(json => this.setState({
-      products: json.products
-    }))
+    this.props.fetchProducts()
   }
 
 
@@ -22,8 +16,14 @@ export default class ProductIndexPage extends Component {
       <div>
         <Header />
         <h1> Index Page </h1>
-        <ProductContainer products={this.state.products}/>
+        <ProductContainer products={this.props.products}/>
       </div>
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {products: state.products}
+}
+
+export default connect(mapStateToProps, { fetchProducts })(ProductIndexPage)
