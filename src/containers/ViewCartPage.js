@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import CartProductThumbnail from '../components/CartProductThumbnail';
+import { connect } from 'react-redux';
+import { fetchCart } from '../actions/carts';
 
-export default class ViewCartPage extends Component {
+class ViewCartPage extends Component {
 
-  state = {
-    cartItems: []
-  }
+  // state = {
+  //   cartItems: []
+  // }
 
   componentDidMount() {
-    fetch('http://localhost:4000/api/v1/carts/1')
-    .then(res => res.json())
-    .then(json => this.setState({
-      cartItems: json.products
-    }))
+    this.props.fetchCart(1)
   }
 
   generateCartProductThumbnails = () => {
-    return this.state.cartItems.map((product) =>
+    console.log('cartitems props:', this.props.cartItems)
+    return this.props.cartItems.map((product) =>
       <CartProductThumbnail product={product} />)
   }
 
   calculateTotal = () => {
     let runningTotal = 0.0
-    for (let item in this.state.cartItems) {
-      runningTotal += this.state.cartItems[item].price
+    for (let item in this.props.cartItems) {
+      runningTotal += this.props.cartItems[item].price
     }
     return runningTotal
   }
@@ -42,3 +41,8 @@ export default class ViewCartPage extends Component {
 
   }
 }
+const mapStateToProps = state => {
+  return {cartItems: state.carts}
+}
+
+export default connect(mapStateToProps, { fetchCart })(ViewCartPage)
