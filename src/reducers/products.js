@@ -8,6 +8,10 @@ export default function productReducer(state = [], action) {
       console.log('heres the action received', action)
       console.log('return of LOAD_PRODUCTS', action.products)
       return action.products
+    case "START_FETCHING_PRODUCT_REQUEST":
+      return state
+    case "LOAD_PRODUCT":
+      return action.product
     default:
       return state;
   }
