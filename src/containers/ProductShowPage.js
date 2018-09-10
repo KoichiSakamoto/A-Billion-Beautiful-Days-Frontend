@@ -16,10 +16,22 @@ class ProductShowPage extends Component {
   }
 
   renderProductImages = () => {
-    console.log(this.props.product.product_images)
+    console.log('prod images:', this.props.product.product_images)
     if (typeof this.props.product.product_images !== 'undefined') {
       return this.props.product.product_images.map((img) =>
       <img src={img.storage_url} alt="blah" key={img.id} height="50" width="50" />)
+    } else {
+      return null
+    }
+  }
+
+  renderProductThumbnail = () => {
+    if (typeof this.props.product[0] !== 'undefined') {
+      console.log('this.props.product[0]: ', this.props.product[0])
+      return <div> <h1> {this.props.product[0].name} </h1>
+      <h2> {this.props.product[0].price} USD </h2>
+      <h3> {this.props.product[0].about} </h3>
+      <img src={this.props.product[0].thumbnail_url} alt="main img" /> </div>
     } else {
       return null
     }
@@ -41,10 +53,7 @@ class ProductShowPage extends Component {
     return (
       <div>
         <Header />
-        <h1> {this.props.product.name} </h1>
-        <h2> {this.props.product.price}.00 USD </h2>
-        <h3> {this.props.product.about} </h3>
-        <img src={this.props.product.thumbnail_url} alt="main img" />
+        {this.renderProductThumbnail()}
         {this.renderProductImages()}
         <button onClick={this.handleClick}> Add to Cart </button>
       </div>

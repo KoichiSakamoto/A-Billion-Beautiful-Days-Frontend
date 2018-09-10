@@ -4,10 +4,15 @@ import ProductThumbnail from '../components/ProductThumbnail';
 export default class ProductContainer extends Component {
 
   generateProductThumbnails = () => {
-    let returnArray = this.props.products.map((product) =>
-       <ProductThumbnail key={"prod-" + product.id} product={product} />
-    )
-    return returnArray
+    if (typeof this.props.products !== 'undefined') {
+      console.log('in genprodthumbnails:', this.props.products)
+      let returnArray = this.props.products.map((product) =>
+         <ProductThumbnail key={"prod-" + product.id} product={product} />
+      )
+      return returnArray
+    } else {
+      return null
+    }
   }
 
   render() {
