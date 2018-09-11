@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 
 const WebsiteAboutBlurb = (props) =>
-  <div className="about-website">
+  <div className="about-website center-text">
     <h3> Welcome To A Billion Beautiful Days! </h3>
-    <Link to="/all-products"> <button> Enter Site </button></Link>
+    <Link to="/all-products"> <h4> Enter Site </h4></Link>
   </div>;
 
 

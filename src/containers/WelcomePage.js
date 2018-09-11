@@ -6,8 +6,8 @@ export default class WelcomePage extends Component {
 
   render() {
     return (<div>
-              <h1> Welcome Page </h1>
-              <img src="placeholder_img.jpg" alt="placeholder" height="500"/>
+              <h1 className="center-text"> A Billion Beautiful Days </h1>
+              <img src="SplashImage.jpg" alt="placeholder" className="splash-image"/>
               <WebsiteAboutBlurb />
             </div>
           )}
