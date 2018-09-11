@@ -10,7 +10,7 @@ const ProductThumbnail = (props) =>
       <div className="center-text"> {props.product.name} </div>
       <div className="center-text"> Price: {props.product.price} $ </div>
     </Link>
-    <hr />
+
   </div>;
 
 

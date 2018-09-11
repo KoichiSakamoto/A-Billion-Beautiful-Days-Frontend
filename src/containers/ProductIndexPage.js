@@ -25,9 +25,11 @@ class ProductIndexPage extends Component {
 
   displayCategories = () => {
     if (typeof this.props.categories !== 'undefined') {
-      return this.props.categories.map((category) => {
+      let newArray = this.props.categories.map((category) => {
         return <div key={category.id} data-id={category.id} onClick={(e) => this.changeCurrentCategory(e)}> ~{category.name}~ </div>
       })
+      newArray.push(<div onClick={() => this.setState({currentCategory: 0})}> ~All~ </div>)
+      return newArray
     } else {
       return null
     }
