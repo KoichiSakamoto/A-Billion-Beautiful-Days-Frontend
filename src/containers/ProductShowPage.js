@@ -36,12 +36,13 @@ class ProductShowPage extends Component {
   }
 
   handleClick = () => {
+    console.log(this.props.product[0].id)
     fetch('http://localhost:4000/api/v1/cart_products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({product_id: this.state.currentProduct.id, cart_id: 1})
+      body: JSON.stringify({product_id: this.props.product[0].id, cart_id: 1})
     })
     .then(res => res.json())
     .then(json => console.log(json))
