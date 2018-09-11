@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import CartProductThumbnail from '../components/CartProductThumbnail';
 import { connect } from 'react-redux';
-import { fetchCart } from '../actions/carts';
+import { fetchCart, deleteFromCart } from '../actions/carts';
 
 class ViewCartPage extends Component {
 
@@ -15,9 +15,13 @@ class ViewCartPage extends Component {
   }
 
   generateCartProductThumbnails = () => {
-    console.log('cartitems props:', this.props.cartItems)
-    return this.props.cartItems.map((product) =>
-      <CartProductThumbnail product={product} />)
+    console.log(this.props.cartItems)
+    if (typeof this.props.cartItems !== 'undefined') {
+      return this.props.cartItems.map((product) =>
+        <CartProductThumbnail product={product} cartProduct={this.props.cartProducts[this.props.cartItems.indexOf(product)]} handleClick={this.removeProductFromCart}/>)
+    } else {
+      return null
+    }
   }
 
   calculateTotal = () => {
@@ -26,6 +30,11 @@ class ViewCartPage extends Component {
       runningTotal += this.props.cartItems[item].price
     }
     return runningTotal
+  }
+
+  removeProductFromCart = (e, cartProd) => {
+    e.target.parentNode.parentNode.removeChild(e.target.parentNode)
+    this.props.deleteFromCart(cartProd)
   }
 
   render() {
@@ -42,7 +51,7 @@ class ViewCartPage extends Component {
   }
 }
 const mapStateToProps = state => {
-  return {cartItems: state.carts}
+  return {cartItems: state.carts.products, cartProducts: state.carts.cart_products}
 }
 
-export default connect(mapStateToProps, { fetchCart })(ViewCartPage)
+export default connect(mapStateToProps, { fetchCart, deleteFromCart })(ViewCartPage)
