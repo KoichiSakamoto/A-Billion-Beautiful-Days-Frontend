@@ -43,9 +43,9 @@ class ProductIndexPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Header />
-        <h1> Index Page </h1>
+        <h1 className="center-text"> A Billion Beautiful Days </h1>
         <Filter displayCategories={this.displayCategories} />
         <ProductContainer products={this.filterProducts()}/>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Filter = (props) =>
-  <div className="filter">
+  <div className="filter" >
     {props.displayCategories()}
   </div>
 

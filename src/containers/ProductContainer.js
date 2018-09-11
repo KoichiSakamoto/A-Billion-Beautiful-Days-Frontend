@@ -16,7 +16,7 @@ export default class ProductContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="product-container">
         {this.generateProductThumbnails()}
       </div>
     )
