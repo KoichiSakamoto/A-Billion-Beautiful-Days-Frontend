@@ -16,7 +16,6 @@ class ProductShowPage extends Component {
   }
 
   renderProductImages = () => {
-    console.log('prod images:', this.props.product.product_images)
     if (typeof this.props.product.product_images !== 'undefined') {
       return this.props.product.product_images.map((img) =>
       <img src={img.storage_url} alt="blah" key={img.id} height="50" width="50" />)
@@ -27,7 +26,6 @@ class ProductShowPage extends Component {
 
   renderProductThumbnail = () => {
     if (typeof this.props.product[0] !== 'undefined') {
-      console.log('this.props.product[0]: ', this.props.product[0])
       return <div> <h1> {this.props.product[0].name} </h1>
       <h2> {this.props.product[0].price} USD </h2>
       <h3> {this.props.product[0].about} </h3>
