@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import { connect } from 'react-redux';
-import { fetchProduct } from '../actions/products'
+import { fetchProduct } from '../actions/products';
+import { addToCart } from '../actions/carts';
 
 class ProductShowPage extends Component {
 
@@ -36,16 +37,7 @@ class ProductShowPage extends Component {
   }
 
   handleClick = () => {
-    console.log(this.props.product[0].id)
-    fetch('http://localhost:4000/api/v1/cart_products', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({product_id: this.props.product[0].id, cart_id: 1})
-    })
-    .then(res => res.json())
-    .then(json => console.log(json))
+    this.props.addToCart(this.props.product[0].id, 1)
   }
 
   render() {
@@ -64,4 +56,4 @@ const mapStateToProps = state => {
   return {product: state.products, productImages: state.product_images}
 }
 
-export default connect(mapStateToProps, { fetchProduct })(ProductShowPage)
+export default connect(mapStateToProps, { fetchProduct, addToCart })(ProductShowPage)
