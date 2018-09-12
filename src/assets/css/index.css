@@ -27,6 +27,7 @@ text-align: center;
   background-color: pink;
   width: 20%;
   float: left;
+  display: block;
 }
 
 .prod-thumbnail {
@@ -36,4 +37,8 @@ text-align: center;
 
 .product-container {
   display: inline;
+}
+
+.filter-row {
+  float: right;
 }

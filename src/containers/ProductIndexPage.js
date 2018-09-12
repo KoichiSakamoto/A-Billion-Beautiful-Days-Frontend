@@ -26,9 +26,9 @@ class ProductIndexPage extends Component {
   displayCategories = () => {
     if (typeof this.props.categories !== 'undefined') {
       let newArray = this.props.categories.map((category) => {
-        return <div key={category.id} data-id={category.id} onClick={(e) => this.changeCurrentCategory(e)}> ~{category.name}~ </div>
+        return <div> <div  className="filter-row" key={category.id} data-id={category.id} onClick={(e) => this.changeCurrentCategory(e)}> ~{category.name}~ </div> <br /> </div>
       })
-      newArray.push(<div onClick={() => this.setState({currentCategory: 0})}> ~All~ </div>)
+      newArray.push(<div className="filter-row" onClick={() => this.setState({currentCategory: 0})}> ~All~ </div>)
       return newArray
     } else {
       return null
