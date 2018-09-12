@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CartProductThumbnail = (props) =>
-  <div className="cart-prod">
+  <div className="cart-prod" data-price={props.product.price}>
     <img src={props.product.thumbnail_url} alt="yup" height="75" width="75" />
     <p> {props.product.name} </p>
     <p> {props.product.price} </p>
