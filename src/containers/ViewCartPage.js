@@ -42,12 +42,14 @@ class ViewCartPage extends Component {
   render() {
 
     return (
-      <div>
+      <div className="cart-page">
         <Header />
-        <h1> Cart Page </h1>
+        <h1 className="center-text"> My Cart </h1>
         {this.generateCartProductThumbnails()}
-        <h3> Total: <div className="order-total"> {this.calculateTotal()} </div> USD</h3>
-        <button> Order </button>
+        <div className="center-text">
+          <div> Total: <span className="order-total"> {this.calculateTotal()} </span> USD</div>
+          <button> Order </button>
+        </div>
       </div>
     )
 

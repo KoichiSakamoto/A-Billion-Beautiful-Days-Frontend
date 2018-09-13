@@ -11,34 +11,68 @@ text-align: center;
 
 .splash-image {
   width: 100%;
-  height: 80%;
+  height: 60%;
 }
 
-.product-container {
-  width: 80%;
-  float: right;
-}
 
 .container {
   display: inline;
 }
 
 .filter {
-  background-color: pink;
-  width: 20%;
+  background-color: white;
+  width: 10%;
   float: left;
   display: block;
+  margin-top: 20px;
 }
 
 .prod-thumbnail {
-  width: 33%;
+  width: 20%;
   float: left;
 }
 
 .product-container {
   display: inline;
+  background-color: white;
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 80%;
+  float: right;
+}
+
+.filter-top-row {
+  font-weight: bold;
 }
 
 .filter-row {
+  float: left;
+  margin-left: 15px;
+}
+
+.right {
   float: right;
+}
+
+.left {
+  float: left;
+}
+
+.shopping-cart {
+  margin-right: 100px;
+}
+
+.header-icon {
+  height: 50px;
+  width: 50px;
+  margin-left: 100px;
+}
+
+.add-to-cart-button {
+  margin-left: 47.5%;
+}
+
+.cart-prod {
+  margin-left: 200px;
+  margin-right: 200px;
 }

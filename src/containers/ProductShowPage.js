@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import { connect } from 'react-redux';
 import { fetchProduct } from '../actions/products';
 import { addToCart } from '../actions/carts';
+import { Link } from 'react-router-dom';
 
 class ProductShowPage extends Component {
 
@@ -27,7 +28,7 @@ class ProductShowPage extends Component {
 
   renderProductThumbnail = () => {
     if (typeof this.props.product[0] !== 'undefined') {
-      return <div> <h1> {this.props.product[0].name} </h1>
+      return <div className="center-text"> <h1> {this.props.product[0].name} </h1>
       <h2> {this.props.product[0].price} USD </h2>
       <h3> {this.props.product[0].about} </h3>
       <img src={this.props.product[0].thumbnail_url} alt="main img" /> </div>
@@ -38,6 +39,7 @@ class ProductShowPage extends Component {
 
   handleClick = () => {
     this.props.addToCart(this.props.product[0].id, 1)
+    window.location.reload()
   }
 
   render() {
@@ -46,7 +48,7 @@ class ProductShowPage extends Component {
         <Header />
         {this.renderProductThumbnail()}
         {this.renderProductImages()}
-        <button onClick={this.handleClick}> Add to Cart </button>
+        <Link to="/all-products"><button className="add-to-cart-button" onClick={this.handleClick}> Add to Cart </button> </Link>
       </div>
     )
   }
