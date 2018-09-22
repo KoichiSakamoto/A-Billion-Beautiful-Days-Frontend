@@ -19,26 +19,32 @@ text-align: center;
   display: inline;
 }
 
-.filter {
-  background-color: white;
-  width: 10%;
-  float: left;
-  display: block;
-  margin-top: 20px;
+
+.prod-name {
+  font-size: 12px;
 }
 
 .prod-thumbnail {
   width: 20%;
   float: left;
+  margin-bottom: 30px;
 }
 
 .product-container {
-  display: inline;
+  display: flex;
+  flex-wrap: wrap;
   background-color: white;
   margin-right: 5%;
-  margin-left: 5%;
   width: 80%;
   float: right;
+}
+
+.filter {
+  width: 10%;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .filter-top-row {
@@ -46,8 +52,8 @@ text-align: center;
 }
 
 .filter-row {
-  float: left;
-  margin-left: 15px;
+  overflow: hidden;
+  margin-left: 10px;
 }
 
 .right {
