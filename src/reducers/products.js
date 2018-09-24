@@ -7,7 +7,7 @@ export default function productReducer(state = [], action) {
     case "START_FETCHING_PRODUCT_REQUEST":
       return state
     case "LOAD_PRODUCT":
-      return [action.product]
+      return state
     default:
       return state;
   }
