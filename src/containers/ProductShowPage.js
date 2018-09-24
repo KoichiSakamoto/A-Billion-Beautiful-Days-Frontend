@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 
 class ProductShowPage extends Component {
 
-  state = {
-    currentProduct: {}
-  }
+  // state = {
+  //   currentProduct: {}
+  // }
 
   componentDidMount() {
     let findId = window.location.href.split('/').slice(-1)
