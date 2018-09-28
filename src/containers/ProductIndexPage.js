@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import ProductContainer from './ProductContainer';
 import Filter from '../components/Filter';
+import MiscInfo from '../components/MiscInfo';
+import Sidebar from './Sidebar';
 import { fetchProducts } from '../actions/products';
 import { fetchCategories } from '../actions/categories';
 import { connect } from 'react-redux';
@@ -47,7 +49,7 @@ class ProductIndexPage extends Component {
       <div className="container">
         <Header />
         <h1 className="center-text"> A Billion Beautiful Days </h1>
-        <Filter displayCategories={this.displayCategories} />
+        <Sidebar displayCategories={this.displayCategories} />
         <ProductContainer products={this.filterProducts()}/>
       </div>
     )

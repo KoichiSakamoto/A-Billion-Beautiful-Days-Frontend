@@ -55,7 +55,21 @@ text-align: center;
   float: right;
 }
 
+.misc-info {
+  width: 100%;
+  list-style-type: none;
+  margin-left: 10px;
+}
+
 .filter {
+  width: 100%;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.side-bar {
   width: 10%;
   float: left;
   display: flex;
