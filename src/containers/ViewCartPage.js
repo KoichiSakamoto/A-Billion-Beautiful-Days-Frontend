@@ -42,7 +42,7 @@ class ViewCartPage extends Component {
   render() {
 
     return (
-      <div className="cart-page">
+      <div className="cart-page container">
         <Header />
         <h1 className="center-text"> My Cart </h1>
         {this.generateCartProductThumbnails()}

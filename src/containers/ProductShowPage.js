@@ -49,7 +49,7 @@ class ProductShowPage extends Component {
     let indexOfProduct = this.findProduct()
     console.log(indexOfProduct)
     return (
-      <div>
+      <div className="container">
         <Header />
         {this.renderProductThumbnail(indexOfProduct)}
         <Link to="/all-products"><button className="add-to-cart-button" onClick={() => this.handleClick(indexOfProduct)}> Add to Cart </button> </Link>
