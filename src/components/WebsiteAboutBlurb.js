@@ -4,9 +4,8 @@ import { Button } from 'react-bootstrap';
 
 
 const WebsiteAboutBlurb = (props) =>
-  <div className="about-website center-text">
-    <h3> Welcome To A Billion Beautiful Days! </h3>
-    <Link to="/all-products"> <Button bsSize="small"> <div> Enter </div> </Button> </Link>
+  <div className="center-text">
+    <Link to="/all-products"> <h2 className="about-website"> Enter </h2> </Link>
   </div>;
 
 

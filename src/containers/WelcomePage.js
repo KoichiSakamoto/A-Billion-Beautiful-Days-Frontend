@@ -28,11 +28,11 @@ export default class WelcomePage extends Component {
         })
       }
     }
-  
+
 
   render() {
     return (<div>
-              <h1 className="center-text"> A Billion Beautiful Days </h1>
+              <h1 className="center-text welcome-title"> A Billion Beautiful Days </h1>
               <img src={this.state.currentImage} alt="placeholder" className="splash-image"/>
               <WebsiteAboutBlurb />
             </div>
