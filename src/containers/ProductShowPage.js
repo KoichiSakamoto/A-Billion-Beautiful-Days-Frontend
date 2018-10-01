@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 
 class ProductShowPage extends Component {
 
-  // state = {
-  //   currentProduct: {}
-  // }
+  state = {
+    selectedSize: "XS"
+  }
 
   componentDidMount() {
     let findId = window.location.href.split('/').slice(-1)
@@ -29,7 +29,7 @@ class ProductShowPage extends Component {
   }
 
   handleClick = (index) => {
-    this.props.addToCart(this.props.product[index].id, 1)
+    this.props.addToCart(this.props.product[index].id, 1, this.state.selectedSize)
   }
 
   findProduct = () => {
@@ -45,6 +45,12 @@ class ProductShowPage extends Component {
     }
   }
 
+  changeSize = (e) => {
+    this.setState({
+      selectedSize: e.target.value
+    })
+  }
+
   render() {
     let indexOfProduct = this.findProduct()
     console.log(indexOfProduct)
@@ -52,7 +58,17 @@ class ProductShowPage extends Component {
       <div className="container">
         <Header />
         {this.renderProductThumbnail(indexOfProduct)}
-        <Link to="/all-products"><button className="add-to-cart-button" onClick={() => this.handleClick(indexOfProduct)}> Add to Cart </button> </Link>
+        <span>
+          <select className="size-select" onChange={(e) => this.changeSize(e)} name="size">
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="2XL">2XL</option>
+          </select>
+          <Link to="/all-products"><button className="add-to-cart-button" onClick={() => this.handleClick(indexOfProduct)}> Add to Cart </button> </Link>
+        </span>
       </div>
     )
   }

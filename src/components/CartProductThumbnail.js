@@ -7,7 +7,7 @@ const CartProductThumbnail = (props) =>
       <img src={props.product.thumbnail_url} alt="thumby" height="75" width="75" />
       <span> {props.product.name}, </span>
     </Link>
-    <span> {props.product.price} USD </span> <br />
+    <span> {props.product.price} USD, {props.cartProduct.size} </span> <br />
     <button onClick={(e) => props.handleClick(e, props.cartProduct)}> Remove Item From Cart </button>
     <hr />
   </div>

@@ -7,7 +7,7 @@ export function fetchCart(id) {
   }
 }
 
-export function addToCart(productId, cartId) {
+export function addToCart(productId, cartId, size) {
   return (dispatch) => {
     dispatch({type: 'START_FETCH_ADD_TO_CART_REQUEST'});
     return fetch('http://localhost:4000/api/v1/cart_products', {
@@ -15,7 +15,7 @@ export function addToCart(productId, cartId) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({product_id: productId, cart_id: cartId})
+      body: JSON.stringify({product_id: productId, cart_id: cartId, size: size})
     })
     .then(resp => resp.json())
     .then(json => dispatch({type: 'ADD_TO_CART'}))
