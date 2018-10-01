@@ -58,7 +58,7 @@ class ProductShowPage extends Component {
       <div className="container">
         <Header />
         {this.renderProductThumbnail(indexOfProduct)}
-        <span>
+        <span className="purchase-form">
           <select className="size-select" onChange={(e) => this.changeSize(e)} name="size">
             <option value="XS">XS</option>
             <option value="S">S</option>
@@ -67,7 +67,7 @@ class ProductShowPage extends Component {
             <option value="XL">XL</option>
             <option value="2XL">2XL</option>
           </select>
-          <Link to="/all-products"><button className="add-to-cart-button" onClick={() => this.handleClick(indexOfProduct)}> Add to Cart </button> </Link>
+          <Link to="/all-products"><button onClick={() => this.handleClick(indexOfProduct)}> Add to Cart </button> </Link>
         </span>
       </div>
     )

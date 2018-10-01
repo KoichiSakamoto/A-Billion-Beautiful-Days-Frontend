@@ -35,6 +35,9 @@ text-align: center;
   display: inline;
 }
 
+.size-select {
+
+}
 
 .prod-name {
   font-size: 12px;
@@ -104,8 +107,8 @@ text-align: center;
   margin-left: 100px;
 }
 
-.add-to-cart-button {
-  margin-left: 47.5%;
+.purchase-form {
+  margin-left: 45%;
 }
 
 .cart-prod {
