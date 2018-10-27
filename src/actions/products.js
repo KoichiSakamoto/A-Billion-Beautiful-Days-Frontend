@@ -1,3 +1,4 @@
+//grabs products from the backend API. Loads the products into the frontend.
 export function fetchProducts() {
   return (dispatch) => {
     dispatch({type: 'START_FETCHING_PRODUCTS_REQUEST'});
@@ -6,7 +7,7 @@ export function fetchProducts() {
         .then(json => dispatch({ type: 'LOAD_PRODUCTS', products: json.products}))
   }
 }
-
+//fetches a specific product. Currently unused.
 export function fetchProduct(id) {
   return (dispatch) => {
     dispatch({type: 'START_FETCHING_PRODUCT_REQUEST'});

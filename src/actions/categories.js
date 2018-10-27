@@ -1,3 +1,5 @@
+//grabs categories from the backend API, specifically for the index page showing all the products.
+//Specifically used for the Filter component.
 export function fetchCategories() {
   return (dispatch) => {
     dispatch({type: 'START_FETCHING_CATEGORIES_REQUEST'});
