@@ -4,6 +4,10 @@ import CartProductThumbnail from '../components/CartProductThumbnail';
 import { connect } from 'react-redux';
 import { fetchCart, deleteFromCart } from '../actions/carts';
 
+//Important page that allows the user to view what's in their cart.
+//Allows user to delete products from their cart.
+//Displays the total price of the products as well.
+
 class ViewCartPage extends Component {
 
   // state = {

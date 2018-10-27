@@ -8,6 +8,12 @@ import { fetchProducts } from '../actions/products';
 import { fetchCategories } from '../actions/categories';
 import { connect } from 'react-redux';
 
+//One of the biggest components. Is the main 'meat' of the web app.
+//Grabs the products from API, and displays them. Passes them to ProductContainer.
+//local state is just which category of products to show.
+//has to asynchronous requests, first fetches all the products, then fetches all
+//the product categories.
+
 class ProductIndexPage extends Component {
 
   state = {

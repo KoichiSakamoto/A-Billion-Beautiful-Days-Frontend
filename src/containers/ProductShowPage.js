@@ -5,6 +5,11 @@ import { fetchProducts } from '../actions/products';
 import { addToCart } from '../actions/carts';
 import { Link } from 'react-router-dom';
 
+//A simpler version of the index page, only shows details of one product.
+//Has some features to be built out, such as additional images for each product.
+//Acquires product info from the url.
+//Allows the user to add the displayed product to their cart.
+
 class ProductShowPage extends Component {
 
   state = {

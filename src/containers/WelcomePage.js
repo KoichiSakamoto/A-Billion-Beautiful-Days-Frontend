@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import WebsiteAboutBlurb from '../components/WebsiteAboutBlurb';
 
+//Simple welcome page. Cycles through preloaded images to look more dynamic.
+//Needs some work as far as responsive design is concerned.
+
 let imageArray = ["SplashImage1.jpg", "SplashImage2.jpg", "SplashImage3.jpg", "SplashImage4.jpg", "SplashImage5.jpg"]
 
 export default class WelcomePage extends Component {

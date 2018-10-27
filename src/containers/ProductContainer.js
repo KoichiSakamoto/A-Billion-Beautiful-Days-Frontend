@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import ProductThumbnail from '../components/ProductThumbnail';
 
+//Complex component that contains product thumbnails. Acquires Products
+//from an ancestor, and passes individual product info into the thumbnail itself.
+//Resides on the index page.
+
 export default class ProductContainer extends Component {
 
   generateProductThumbnails = () => {

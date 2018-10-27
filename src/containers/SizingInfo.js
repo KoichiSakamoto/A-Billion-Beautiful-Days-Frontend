@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 
-
+//Multiple tables displaying sizing information.
+//Table code lifted from Shopify website HTML.
 
 export default class SizingInfo extends Component {
 
