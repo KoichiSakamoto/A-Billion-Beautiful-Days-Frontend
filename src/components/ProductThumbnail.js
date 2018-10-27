@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+//Functional component that displays a single product.
+//The main index page contains many of these.
 
 const ProductThumbnail = (props) =>
   <div className="prod-thumbnail">

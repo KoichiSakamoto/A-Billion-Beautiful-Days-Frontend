@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+//This component is rendered when viewing your cart.
+//Each one represents one product in the cart itself.
+//Grabs its props from a fetch request that acquires the cart itself.
+
+
 const CartProductThumbnail = (props) =>
   <div className="cart-prod" data-price={props.product.price}>
     <Link to={"/product/" + props.product.id}>
