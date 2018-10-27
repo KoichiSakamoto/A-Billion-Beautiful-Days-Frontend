@@ -7,6 +7,8 @@ import ViewCartPage from './containers/ViewCartPage.js'
 import WelcomePage from './containers/WelcomePage.js'
 import SizingInfo from './containers/SizingInfo.js'
 
+//Contains the React Router component, with Routes.
+
 class App extends Component {
   render() {
     return (
